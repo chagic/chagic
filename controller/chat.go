@@ -26,6 +26,15 @@ func CreateChat(ctx *gin.Context) {
 	ctx.JSON(200, res)
 }
 
+// ListChats godoc
+// @Summary      List Chats
+// @Description  get chats
+// @Tags         chat
+// @Accept       json
+// @Produce      json
+// @Param        q    query     string  false  "name search by q"  Format(email)
+// @Success      200  {object}   model.Chat "{"code": 200,"data": model.Chat , "msg": "string","success": true}"
+// @Router       /chat/list [get]
 func ListChats(ctx *gin.Context) {
 	userID, ok := ctx.Get("userId")
 	if !ok {

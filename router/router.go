@@ -5,6 +5,8 @@ import (
 	"chagic/middleware"
 
 	"github.com/gin-gonic/gin"
+	swaggerfiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 func NewRouter() *gin.Engine {
@@ -20,5 +22,6 @@ func NewRouter() *gin.Engine {
 		RegisterMessageRouter(v1)
 		v1.GET("ws", middleware.Jwt(), WsHandler)
 	}
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 	return r
 }

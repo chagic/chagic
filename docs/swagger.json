@@ -1,0 +1,79 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/chat/list": {
+            "get": {
+                "description": "get chats",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "chat"
+                ],
+                "summary": "List Chats",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "format": "email",
+                        "description": "name search by q",
+                        "name": "q",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"code\": 0,\"data\": model.Chat , \"msg\": \"string\",\"success\": true}",
+                        "schema": {
+                            "$ref": "#/definitions/model.Chat"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.Chat": {
+            "type": "object",
+            "properties": {
+                "active_users": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "participant_count": {
+                    "type": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/model.ChatType"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.ChatType": {
+            "type": "string",
+            "enum": [
+                "private",
+                "group"
+            ],
+            "x-enum-varnames": [
+                "ChatTypePrivate",
+                "ChatTypeGroup"
+            ]
+        }
+    }
+}
