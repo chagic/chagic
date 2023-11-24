@@ -18,6 +18,7 @@ var MsgFlags = map[int]string{
 	WebsocketOnlineReply:        "针对回复信息在线应答成功",
 	WebsocketOfflineReply:       "针对回复信息离线回答成功",
 	WebsocketLimit:              "请求收到限制",
+	ERROR_GET_CHAT_USERS:        "获取聊天用户失败",
 }
 
 // GetMsg 获取状态码对应信息

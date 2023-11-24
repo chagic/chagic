@@ -20,6 +20,8 @@ func NewRouter() *gin.Engine {
 		RegisterUserRouter(v1)
 		RegisterChatRouter(v1)
 		RegisterMessageRouter(v1)
+		// RegisterSocketIORouter(r)
+
 		v1.GET("ws", middleware.Jwt(), WsHandler)
 	}
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))

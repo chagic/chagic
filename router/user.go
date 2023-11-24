@@ -13,4 +13,6 @@ func RegisterUserRouter(group *gin.RouterGroup) {
 	router.POST("/register", controller.Register)
 	router.Use(middleware.Jwt())
 	router.GET("/", controller.GetUserInfo)
+	// router.GET("/logout", controller.Logout)
+	router.GET("list", controller.ListUsers)
 }

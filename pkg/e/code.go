@@ -12,6 +12,7 @@ const (
 	ERROR_NOT_EXIST_USER        = 40004
 	ERROR_PASSWORD_WRONG        = 40005
 	ERROR_TOKEN_GENERATE_FAILED = 40006
+	ERROR_GET_CHAT_USERS        = 40007
 
 	WebsocketSuccessMessage = 50001
 	WebsocketSuccess        = 50002

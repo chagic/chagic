@@ -71,3 +71,10 @@ func GetUserInfo(id float64) serializer.Response {
 	user.Password = ""
 	return serializer.ResultOK(user)
 }
+
+func ListUsers() serializer.Response {
+	var users []model.User
+	model.DB.Model(&model.User{}).Find(&users)
+
+	return serializer.ResultOK(users)
+}

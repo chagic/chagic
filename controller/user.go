@@ -43,3 +43,8 @@ func GetUserInfo(ctx *gin.Context) {
 	ctx.JSON(200, res)
 
 }
+
+func ListUsers(ctx *gin.Context) {
+	res := service.ListUsers()
+	ctx.JSON(200, res)
+}
